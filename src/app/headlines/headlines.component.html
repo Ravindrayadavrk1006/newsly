@@ -1,0 +1,32 @@
+    <!--
+      <div class="card" style="width: 18rem;">
+          <img src="{{one_news['urlToImage']}} " width="200" class="card-img-top" alt="img">
+          <div class="card-body">
+            <h5 class="card-title" style="background:cyan">{{one_news.title}}</h5>
+            <p class="card-text">{{one_news["description"]}}</p>
+            <a href="one_news['url']" class="btn btn-primary" target="_blank">full content</a>
+          </div>
+        </div>
+        -->
+        <div class="jumbotron">
+          <h1 class="text-center display-1">{{headlinesText}}</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div *ngIf = "news == null">
+                    Loading . . .
+                    </div>
+              <div class="col-sm-12 col-md-4 d-flex align-items-stretch mb-4" *ngFor="let one_news of news">
+                <div class="card">
+                  <img src="{{ one_news['urlToImage'] }}" alt="" style="max-height:200px;" class="card-img-top">
+                  <div class="card-body">
+                    <h6 class="card-title">{{ one_news["title"] }}</h6>
+                    <p class="card-text">{{ one_news['description'] }}</p>
+                    <a href="{{ one_news['url'] }}" class="btn btn-primary" target="_blank">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
